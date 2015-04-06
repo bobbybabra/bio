@@ -1,0 +1,218 @@
+finding the evalue from a blast report
+displayed in column 10
+
+strategy
+compute the mean
+########
+pseudocode:
+
+open file
+
+sum = 0
+count = 0
+for each line
+	split
+	convert to float
+	sum = sum + 1
+
+	append eval to float
+mean = sum/count
+sumsqurtdiff = 0
+for each eval in eval_list
+	sum squrt dif +
+ration = sumsqrdiff/count -1
+#####
+usr/bin/env python2.7
+import io
+import math
+
+sum = 0.0
+count = 0
+evals_list = list()
+
+fhandle = io.open(:blast.txt")
+for line in fhandle:
+	# print(line is " = line)
+	line_list =line.spit("\t:)
+	print(str(line_list))
+	eval_str = line_list[10]
+	eval = float(eval_str)
+	sum = sum + eval
+	count = couint + 1
+	evals_list.append(eval) = evals_list.append(eval)
+	#print("list is " + str(evals_list))
+
+fhandle .close()
+
+mean = sum/count
+#print("mean is " + str(mean))
+
+sumsqdiffs == 0.0
+
+for eval in eval_list:
+	sumdsqdiffs = sumsqdiffs + (mean - eval))**2
+	print("sumsqdiffs is " + str(sumsqdiffs))
+
+ratio = sumsqdiffs/count-1)
+sdev = math.sqrt(ratio)
+print("sdev is " + str(sdev))
+
+##########
+
+control flow if (also called conditional) allow us to execute block based on boolean true false result
+	age = [21, 19, 31, 12]
+	for age in ages:
+	if(age < 25):
+		print ("whatever")
+	else:
+		print("whatever")
+	if (age < 18):
+		print ("can't vote")
+	elif (age < 21):
+		print("can vote")
+		print("cant drink:)
+	elif (age < 25):
+		print ("can vote")
+		print ("can drink")
+	else:
+		print ("your old")
+
+#can't say if more than one time
+#can include zero of more elif
+#can include zero or one else catch all
+#evaluated in order, this first one to get true, runs and the rest are skipped
+
+while loop
+executes a block of code as long as as it's true
+otherwise skips
+if never goes false, then in infinte loops (ctrl c to exit)
+
+i = 1
+while (i < 10):
+	print(str(i) + "is less than 10!")
+	i = i + 1
+print(:done, i now more than 10")
+
+###
+
+"bob" > "alpha"
+"bob = "alpha"
+
+###
+GC count
+
+given a DNA string, compute the percentage of Gs and Cs
+
+strategy
+look at each base in string (probably a loop)
+compare it to C and G and add 1 to a counter
+at the end divide the counter by the len of sequence
+
+pseudocode
+
+seq = "ACTACCAG"
+counter = 0
+seq_len = len(seq)
+for index from 0 to last index in string (len - 1)
+	seq_base = seq(index)
+	if(seq_base = "0" or seq_base == G):
+		gc_counter = gc_counter + 1
+
+gc_content = float(gc_counter)/float(seq_len)
+
+print
+
+
+#######code it##########
+
+#1/usr/binenv python2.7
+
+seq ="std_in"
+
+gc_counter = 0
+seq_len = len(seq)
+
+for index in range(0,seq)len):
+	seq_bse = seq[index]
+#	print(seq_base)
+	if(seq_base == "C" or seq_base == "G"):
+		gc_counter = gc_counter + 1
+
+gc_content = float(gc_counter/float(seq_len)
+print("gc is " + str(gc_content))
+
+############
+
+do not compare floats for equality(==)
+	because decimals/fractions are rounded internally and are not exact absolutes
+
+if (age = 21) #sets
+if (age == 21) #compares
+
+#######
+control flow for functions
+seq_len = len(seq)  # we give it a parameter it returns an answer
+functions need three things
+	imput paramenters
+	code block to execute based on those paramenters
+	value to return (optional if fxn does something rather than return something)
+		e.g. print regurns someting, not does someting
+
+fxns in python must be definded before then can be called or executed
+
+# given a seq string and a one character string(base)
+# return the percentage of seq data of base
+def base_composition(seq, base):
+	base_counter = o
+	seq_len = len(seq)
+	for index in range(0,seq_len):
+		seq_base = seq[index]
+		if(seq_base = = base):
+			base_counter = base_sequence + 1
+	base_Sequence = float(base_counter/float(seq_len)
+return(base_comp)
+
+seq1 = 'ACTT'
+seq2 = 'TACG'
+seq_1comp = base_compsition(seq1, "C")
+
+# given a DNA sequence return GC_content
+def compute_gc_content(seq):
+	g_content = base_composition(seq ,"G")
+	c_content = base_composition(seq, "C")
+	gc_content = g_content + c_content
+	return(gc_content)
+
+#####
+rule 1
+fxns should only use variables defined within the fxn or passed as parameters
+
+def comute_gc_content_crappy():
+	g_content = base_compostion(seq, "G")
+	c_content = base_composition(seq, "C")
+	GC = g_content + c_content
+	return(gc)
+
+seq = "ACTAGCCAT:
+GC_content = compute_gc_content_crappy()
+
+this works but is inextrically linked and need to remember parametnrs
+remember rule: fxns should only use variables defined within the fxn or passed as parameters
+
+rule 2
+document your fxn with comments
+what does the fxn do, what are the parametners andy rules, waht does it return
+
+rule 3
+fxns shouldn't be too long
+
+rule 4
+make lots of functions
+have a chunk of code that encapsulates some idea? then make a fxn
+	even if you only call it once
+
+
+the psychological profiln of a progrmmer
+is mostly the ability to shift levels of abstraction from low level to high level.
+to see something in the small and see something in the large
+	donald knita
