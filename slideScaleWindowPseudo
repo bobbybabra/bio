@@ -1,0 +1,7 @@
+def windowSize(seq, size)
+seq_len = len(seq)
+
+	for index in range(0, size - 1):
+		previousWindow = [index]
+	previousWindow = seq_len
+	slider = size + previousWindow
