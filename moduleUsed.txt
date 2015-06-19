@@ -1,0 +1,2 @@
+module use -a /nfs1/Teaching/data/modulefiles
+module load rnaseq_workshop
